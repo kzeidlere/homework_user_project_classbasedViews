@@ -30,18 +30,10 @@ class AddUserView(FormView):
 
 class EditUserView(View):
     def get(self, request):
-        user_id = request.POST['user_id']
-        users = User.objects.get(pk=user_id)
 
-        users.save()
-
-        context = {
-            'users': users,
-        }
         return render(
             template_name='user_detail.html',
             request=request,
-            context=context,
         )
 
     def post(self, request):
