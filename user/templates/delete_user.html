@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Delete user</title>
+  </head>
+  <body>
+    <form method="post">
+      {% csrf_token %}
+      <h3>Are you sure you want to delete?</h3>
+      <h4>Username: <strong>{{ object.username }}</strong></h4>
+      <p>E-mail: {{ object.email }}</p>
+      <input type="submit" value="Confirm">
+    </form>
+
+  </body>
+</html>
